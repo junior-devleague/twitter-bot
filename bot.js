@@ -12,6 +12,7 @@ let T = new Twit(config);
 let stream = T.stream('user');
 stream.on('follow',followed);
 
+//Send direct message and follow user when followed.
 function followed(eventMessage) {
   console.log("Someone has followed us!");
   let name = eventMessage.source.name;
@@ -25,4 +26,5 @@ function followed(eventMessage) {
       console.log('The message has been sent!');
     }
   });
+
 }
